@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainScreenFragment">
+    tools:context=".view.MainScreenFragment">
 
     <LinearLayout
         android:id="@+id/search_enter_container"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,28 +20,64 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/search_word"
             android:layout_margin="@dimen/search_field_margin"
-            app:endIconMode="custom"
+            android:hint="@string/search_word"
             app:endIconDrawable="@drawable/ic_baseline_search_24"
+            app:endIconMode="custom"
             app:helperText="@string/search_helper_text">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_word_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:id="@+id/search_word_edit_text" />
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <LinearLayout
+            android:id="@+id/search_result_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/search_field_margin"
-            android:text="@string/search_result_text" />
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/search_result_text" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/search_field_margin" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/loading_process_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/loading_process_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/progress_bar_bottom_margin" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

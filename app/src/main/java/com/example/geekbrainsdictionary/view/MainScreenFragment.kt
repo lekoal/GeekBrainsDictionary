@@ -1,4 +1,4 @@
-package com.example.geekbrainsdictionary
+package com.example.geekbrainsdictionary.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

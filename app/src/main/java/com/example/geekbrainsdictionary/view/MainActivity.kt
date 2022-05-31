@@ -1,4 +1,4 @@
-package com.example.geekbrainsdictionary
+package com.example.geekbrainsdictionary.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
