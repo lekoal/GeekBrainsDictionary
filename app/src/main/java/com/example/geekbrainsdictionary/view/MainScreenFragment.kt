@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.geekbrainsdictionary.data.web.entity.SearchResultDTO
 import com.example.geekbrainsdictionary.databinding.FragmentMainScreenBinding
 
-class MainScreenFragment : Fragment() {
+class MainScreenFragment : Fragment(), BaseView {
 
     private var _binding: FragmentMainScreenBinding? = null
     private val binding get() = _binding!!
@@ -27,5 +28,9 @@ class MainScreenFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainScreenFragment()
+    }
+
+    override fun setSearchResult(searchResult: List<SearchResultDTO>) {
+
     }
 }

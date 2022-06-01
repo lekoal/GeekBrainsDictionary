@@ -52,7 +52,8 @@
                 android:id="@+id/rv_search_result"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/search_field_margin" />
+                android:layout_marginTop="@dimen/search_field_margin"
+                tools:listitem="@layout/rv_search_result_item" />
 
         </LinearLayout>
 
@@ -62,9 +63,9 @@
         android:id="@+id/loading_process_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
-        android:background="@color/white"
         android:alpha="0.5"
+        android:background="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
